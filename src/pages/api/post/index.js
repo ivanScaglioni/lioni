@@ -1,7 +1,7 @@
 import { dbConnect } from "utils/mongoose.js";
 dbConnect()
 
-import Post from "#models/Post.js";
+import Post from "#models/Post.model.js";
 
 
 
@@ -10,17 +10,17 @@ import Post from "#models/Post.js";
 export default async function handler(req,res){
 
     const {method, body} = req;
+    console.log(req.url)
     switch(method){
         case "GET":
-            const posts = await Post.find();
-            console.log(posts);
-            return res.status(200).json("posts");
+            
+            const posts = await Post.find().sort({'updatedAt': -1});
+            return res.status(200).json(posts);
         case "POST":
 
             try {
                 const newPost = new Post(body);
                 const savePost = await newPost.save();
-               
                 return res.status(201).json("Post saved successfully");
             } catch (error) {
                 return res.status(400).json({error:error.message});

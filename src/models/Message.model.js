@@ -3,14 +3,12 @@ import { Schema, models, model } from "mongoose";
 const messageSchema =  new Schema({
     name:{
         type: String,
-        required: [true, 'Title is requiered'],
-        unique:true,
+        required: [true, 'name is requiered'],
         trim:true,
         maxlength: [16, 'name must be less than 16 characters']
     },
     contact:{
         type: String,
-        unique:true,
         trim:true,
         maxlength: [30, 'name must be less than 30 characters']
     },

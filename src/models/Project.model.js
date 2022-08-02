@@ -1,6 +1,6 @@
 import { Schema, models, model } from "mongoose";
 
-const postSchema =  new Schema({
+const projectSchema =  new Schema({
     title:{
         type: String,
         required: [true, 'Title is requiered'],
@@ -8,22 +8,34 @@ const postSchema =  new Schema({
         trim:true,
         maxlength: [40, 'Tile must be less than 40 characters']
     },
-    subtitle:{
+    image:{
         type:String,
-        trim:true,
-        maxlength: [60, 'subtitle must be less than 60 characters']
+        default: undefined,
+        trim:true
     },
-    body:{
+    description:{
+        type:String,
+        required: [true, 'some description'],
+        trim:true,
+        maxlength: [250, 'Tile must be less than 250 characters']
+    },
+    expand:{
         type:String,
         required:[true,'add a text or a body'],
         trim:true,
         maxlength: [500, 'this must be less than 500 characters']
     },
-    sources:{
-        type:[String],
-        default: '.',
+    github:{
+        type:String,
+        default: undefined,
+        trim:true,
+    },
+    website:{
+        type:String,
+        default: undefined,
         trim:true,
     }
+
     
 }, {
     timestamps:true,
@@ -31,4 +43,4 @@ const postSchema =  new Schema({
 })
 
 
-export default models.Post || model('Post', postSchema);
+export default models.Project || model('Project', projectSchema);

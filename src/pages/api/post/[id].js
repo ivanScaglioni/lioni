@@ -1,6 +1,6 @@
 
 import { dbConnect } from "utils/mongoose";
-import Post from "models/Post";
+import Post from "models/Post.model.js";
 import {isValidObjectId} from "mongoose"
 
 dbConnect();
@@ -39,7 +39,7 @@ export default async (req, res) => {
         
         
         
-            default:
+        default:
             return res.status(400).json({msg:"this method is not supported"})
     }
 

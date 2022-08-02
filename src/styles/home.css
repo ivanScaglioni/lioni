@@ -1,7 +1,52 @@
-body{
-    min-width: 100vw;
-    min-height: 100vh;
-    background: rgb(169,255,154);
-    background: linear-gradient(180deg, rgba(169,255,154,1) 0%, rgba(84,164,70,1) 65%, rgba(6,64,29,1) 100%);
+
+
+
+.card-home{
+    
+    background-color: #D6E6F2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 16px;
+    /* padding-inline: 6px; */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    
+}
+.card-img{
+    display: flex;
+    align-self: center;
+    width: 100vw;
+    min-width: 200px;
+    max-width: 400px;
+    
    
+    
+}
+.image{
+
+    overflow: hidden;
+    object-fit:scale-down;
+}
+
+.card-container{
+   width: 100%;
+    /* overflow: hidden; */
+    display: flex;
+    gap: 10vw 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+
+
+.home-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }

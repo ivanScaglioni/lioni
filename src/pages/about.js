@@ -1,9 +1,10 @@
+import CompAbout from "components/compAbout"
 
 
 
-
-function About() {
-    return <div>about me</div>
-  }
+export default function About() {
+  return (
+    <CompAbout page="about"/>
+  )
+}
   
-  export default About

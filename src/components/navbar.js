@@ -2,29 +2,24 @@
 import Link from "next/link";
 
 export default function Navbar() {
+
+  // const handleMenu =(e) =>{
+
+  //   console.log("hola mundo")
+  // }
+
+
     return (
-        <div>
-          <div>
-            <Link href="/">
-              <a> Home </a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/about">
-              <a> About me</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/projects">
-              <a> Projects</a>
-            </Link>
-          </div>
-          <div>
-              <Link href="/posts">
-                <a> Posts</a>
-              </Link>
-          </div>
+      <Link href="/">
+        <div className="nav_bar push">
+          
+            
+          Home 
+            
+  
+
         </div>
+      </Link>
     )
   }
   

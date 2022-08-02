@@ -1,7 +1,7 @@
 import { dbConnect } from "utils/mongoose.js";
 dbConnect()
 
-import Message from "#models/Message.js";
+import Message from "#models/Message.model.js";
 
 
 

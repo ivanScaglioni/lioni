@@ -1,0 +1,27 @@
+.skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    border: 1px solid palegreen;
+}
+
+
+.skill-container{
+    padding-left: 20vw;
+    padding-right: 20vw ;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.401);
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4vw 10vw;
+
+}
+.skill-icon{
+    
+    
+    width: 80px;
+    height: 80px;
+}

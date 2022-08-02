@@ -1,0 +1,30 @@
+.home-about{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+.perfil{
+    border: 1px solid rebeccapurple;
+    border-radius: 50%;
+    border: 5px solid #1d201d;
+    overflow: hidden;
+    max-width: 400px;
+    min-width: 230px;
+    
+    
+}
+
+.home-ivan{
+    max-width: 600px;
+    min-width: 200px;
+    padding: 30px;
+    
+    
+}
+

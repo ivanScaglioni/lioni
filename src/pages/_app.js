@@ -1,14 +1,26 @@
 
 
-import Layout from 'components/layout.js'
-import 'styles/home.css'
+import Layout from 'components/layout.js';
+import 'styles/indexLayout.css';
+import 'styles/home.css';
+import 'styles/footerStyle.css';
+import 'styles/navbarStyle.css';
+import 'styles/skillStyle.css';
+import 'styles/newStyle.css';
+import 'styles/about.css';
 
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <div id='app'>
+      <div id='background'>
+      </div>
+      <Layout>
+        <Component  {...pageProps} />
+      </Layout>
+
+    </div>
+
   )
 }
 

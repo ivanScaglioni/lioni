@@ -5,16 +5,18 @@ const conn = {
 }
 
 export async function  dbConnect(){
-
+    
     if (conn.isConnected) return;
-    const db = await connect(process.env.MONGODB_URL)
-    conn.isConnected=db.connections[0].readyState;
+    const db = await connect(process.env.MONGODB_URL, {keepAlive: true})
+    if( db.connections[0].readyState == 1) conn.isConnected = true;
     console.log(db.connection.db.databaseName);
 }
 
 connection.on("connected",()=>{
     console.log("mongodb is connected");
+    
 });
+
 
 
 connection.on("error", ()=>{
