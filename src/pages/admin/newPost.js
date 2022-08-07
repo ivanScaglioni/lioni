@@ -1,10 +1,9 @@
 
-export default function NewProject({host}){
+export default function NewPost(){
 
     return(
         <div >
-    
-            <form className="form-new" action={`${host}/api/post`} method="POST" >
+            <form className="form-new" action={'/api/post'} method="POST" >
                 <h1>nuevo post</h1>
                 <input className="input-new" type="text" name="title" placeholder="title " />
                 <textarea className="input-new" rows="5" cols="30" type="text" name="description" placeholder="little description of post" />
@@ -18,12 +17,3 @@ export default function NewProject({host}){
     )
 }
 
-
-export async function getServerSideProps(context) {
-
-  
-
-    return {
-      props: { host: process.env.HOST} // will be passed to the page component as props
-    }
-  }

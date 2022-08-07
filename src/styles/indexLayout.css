@@ -87,22 +87,32 @@ section{
     justify-content: center;
 }
 .title{
+ 
     text-align: center;
-    width: auto;
+    color: rgb(241, 255, 254);
     font-size: 4rem;
-    padding-bottom: 30px;
-
+    
 
   
     
 }
 
+.title:hover{
+   letter-spacing:10px;
+   transition-duration: 1s;
+  
+   transition-timing-function: ease;
+    color: rgb(255, 255, 255);
+}
+
+
 .push:hover{
-    transform: scale(1.1);
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+   
+    
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    
+   
    
 }
 

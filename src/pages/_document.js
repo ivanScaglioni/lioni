@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Quicksand:wght@300;400&display=swap" rel="stylesheet"/>
       </Head>
       <body>

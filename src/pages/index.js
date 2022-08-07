@@ -1,28 +1,27 @@
 import Link from "next/link";
-import { useRouter } from 'next/router';
+
 import CompAbout from "components/compAbout";
 import Notfound from "components/notfound.js";
-import Head from "next/head";
 
 
-export default function HomePage(props) {
-  const router = useRouter()
+
+export default  function HomePage(props) {
+  
   const posts = props.posts;
   const projects = props.projects;
-  
+
   return (
 
     <div className="container-v home">
-      <Head>
-        <title>ivanScaglioni</title>
-        
-      </Head>
+
       <section className="home-section">
         <CompAbout page="Home"/>
       </section>
       <section className="home-section home-proj">
         <Link href="/projects">
+          
           <div className="title push">PROJECTS</div>
+          
         </Link>
         <div className="card-container">
           {projects.length > 0 
@@ -42,9 +41,6 @@ export default function HomePage(props) {
 
 
                 }
-                <p>
-                {proj.description}
-                </p>
                 <div className="card-description">
                   <p>{proj.description}</p>
                 </div>
@@ -83,14 +79,9 @@ export default function HomePage(props) {
 
 
                 }
-
-                                   
-               
-
-                               
                 
                 <p className="card-description">
-                  {post.body}
+                  {post.description}
                 </p>
 
               </div>
@@ -109,12 +100,13 @@ export default function HomePage(props) {
 
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
   
-  const resPost = await fetch(`${process.env.HOST}/api/post/home`)
+  const host = process.env.HOST;
+  const resPost = await fetch(`${host}/api/post/home`)
   const dataPost = await resPost.json()
-  const resProj = await fetch(`${process.env.HOST}/api/project/home`)
+  const resProj = await fetch(`${host}/api/project/home`)
   const dataProj = await resProj.json()
 
 

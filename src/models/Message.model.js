@@ -16,7 +16,6 @@ const messageSchema =  new Schema({
         type:String,
         required:[true,'add a text or a message'],
         trim:true,
-        unique:true,
         maxlength: [250, 'this must be less than 250 characters']
     }
     

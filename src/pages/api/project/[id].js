@@ -4,12 +4,13 @@ dbConnect();
 import Project from "models/Project.model.js";
 import {isValidObjectId} from "mongoose";
 
+import {getSession} from "next-auth/react";
 
 
 export default async (req, res) => {
 
     const{method, body, query:{id}} = req;
-
+    
     const isId = isValidObjectId(id);
 
     if(!isId)return res.status(400).json("no valid id received");
@@ -32,7 +33,10 @@ export default async (req, res) => {
 
 
         case "DELETE":
+            const session = await getSession();
+            if(!session){
 
+            }
             const deleteProject = await Project.findByIdAndDelete(id);
             if(!deleteProject) return res.status(404).json({msg:"Project not found"});
             return res.status(204).json();

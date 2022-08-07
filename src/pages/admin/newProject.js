@@ -1,12 +1,10 @@
+export default function NewProject(){
 
-
-export default function NewProject({host}){
-
-  
     return(
-        <div>
-            <form className="form-new" action={`${host}/api/project`} method="POST" >
-                <h1>nuevo projecto</h1>
+        <div >
+    
+            <form className="form-new" action={'/api/post'} method="POST" >
+                <h1>nuevo project</h1>
                 <input className="input-new" type="text" name="title" placeholder="title " />
                 <textarea className="input-new" rows="5" cols="30" type="text" name="description" placeholder="little description of post" />
                 <textarea className="input-new" rows="5" cols="30" type="textA" name="expand" placeholder="body of post"/>
@@ -18,15 +16,3 @@ export default function NewProject({host}){
         </div>
     )
 }
-
-
-export async function getServerSideProps(context) {
-
-  
-    
-  
-  
-    return {
-      props: { host: process.env.HOST} // will be passed to the page component as props
-    }
-  }

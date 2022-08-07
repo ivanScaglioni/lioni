@@ -1,0 +1,13 @@
+
+
+
+.form-login{
+    gap: 30px;
+    height: 100vh;
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}

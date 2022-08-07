@@ -5,9 +5,33 @@ import telegram from "#public/icons/icon-telegram.svg";
 import linkedin from "#public/icons/icon-linkedin.svg";
 import github from "#public/icons/icon-github.svg";
 import Link from "next/link";
+import { useState } from "react";
 
 
 export default function Footer() {
+
+    const initialState = {
+        name:'',
+        contact:'',
+        msg4me:''
+    }
+
+
+    const [message, setMessage]= useState(initialState)
+    
+    const handleChange =(e)=>{
+        setMessage({...message,[e.target.name]:e.target.value})
+    }
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault()
+        const res = await fetch('api/message',{method:'POST', body: JSON.stringify(message),})
+        console.log(res.status);
+        setMessage({...initialState});
+
+        
+    }
+
     return (
         <div id="contact">
             <div id="link-container">
@@ -56,12 +80,13 @@ export default function Footer() {
             
             <div className="container-msg" >
                 
-                <form className="form-msg">
+                <form className="form-msg" action={'/api/message'} method="POST" onSubmit={handleSubmit}>
                     <h2 >Write me a message</h2>
-                    <input className="input-msg" type="text" name="author"  placeholder="Name" />
-                    <input className="input-msg" type="text" name="contact"  placeholder="Contact(optional)" />
-                    <textarea className="input-msg" rows="5" cols="30" placeholder="Write your message here"></textarea>
-                    <button className="btn-msg" >Send Message</button>
+                    <input className="input-msg" type="text" name="name"  placeholder="Name" value={message.name} onChange={handleChange} />
+                    <input className="input-msg" type="text" name="contact"  placeholder="Contact(optional)" value={message.contact}  onChange={handleChange} />
+                    <textarea className="input-msg" type="text" rows="5" cols="30" name="msg4me" value={message.msg4me} placeholder="Write your message here" onChange={handleChange}></textarea>
+                    <button className="btn-msg push" type="submit"   >Send Message</button>
+                    
                 </form>
             </div>
             <div className="footer-nav">
@@ -85,3 +110,4 @@ export default function Footer() {
     )
   }
   
+

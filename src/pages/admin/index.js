@@ -1,22 +1,13 @@
-export default function NewProject(props){
+import Link from "next/link"
 
-    return(
-        <div >
-            hola ivan
-        </div>
-    )
+export default function Admin(props){
+
+return(
+    <div >
+        <h1>mensajes</h1>
+        <h1>create new projectos</h1>
+        <h1>create new pos </h1>
+    </div>
+)
+
 }
-
-
-export async function getServerSideProps(context) {
-
-
-
-    
-  
-  
-  
-    return {
-      props: {} 
-    }
-  }
