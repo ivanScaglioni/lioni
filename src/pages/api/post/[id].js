@@ -10,12 +10,16 @@ export default async (req, res) => {
 
     const{method, body, query:{id}} = req;
 
+    console.log(body, method)
+
     const isId = isValidObjectId(id);
+
     if(!isId)return res.status(400).json("no valid id received");
 
     switch (method) {
 
         case "GET":
+            
             const post = await Post.findById(id);
             if(!post) return res.status(404).json({msg:"post not found"});
             return res.status(200).json(post);
@@ -28,7 +32,7 @@ export default async (req, res) => {
                 new : true,
             });
             if(!upPost) return res.status(404).json({msg:"post not found"});
-            return res.status(200).json(upPost);
+            return res.status(201);
 
 
 

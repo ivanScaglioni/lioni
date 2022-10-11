@@ -10,35 +10,53 @@ import mongodb from '#public/icons/icon-mongodb.svg';
 import node from '#public/icons/icon-node.svg';
 import css from '#public/icons/icon-css.svg';
 import webpack from '#public/icons/icon-webpack.svg';
+import next from '#public/icons/icon-next.svg';
+
 
 
 export default function Skills(props) {
 
-    const arrskills = ['javascript','typescript','mongodb','node','git','webpack','html','css','vue']
-    const skills = [javascript,typescript,mongodb,node,git,webpack,html,css,vue]
-    var inde = 0;
-    const listSkills = skills.map((skill,inde,listSkills)=>
 
-        <div className='skill'>
-            <div className='skill-icon'>
-                <Image src={skill} layout='responsive' />
+
+    const arrskills = ['javascript','typescript','mongodb','node','git','webpack','html','css','vue','next']
+    const skills = [javascript,typescript,mongodb,node,git,webpack,html,css,vue,next]
+    var inde = 0;
+
+  
+
+    const listSkills = skills.map((skill,inde,listSkills)=>
+        
+        <div className='skill' key={skill.src}>
+        
+            <div>
+               
+                <img className='skill-icon' src={`${skill.src}`} alt="" />
+
             </div>
             <div className='skill-name'>
                 {arrskills[inde]}
             </div>
+        
+
+
         </div>
+        
+        
     );
     return(
 
-        <div>
+        <div className='skill-section' >
 
             <div>
                 SKILLS
             </div>
             
-            <div className='skill-container'>
-            
-            {listSkills}
+            <div className='skill-container' id="skillContainer">
+                <div id='band'>
+                    {listSkills}
+                    {listSkills}
+                </div>
+                
            
             </div>
         </div>

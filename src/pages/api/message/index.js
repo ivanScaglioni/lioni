@@ -1,6 +1,7 @@
 import { dbConnect } from "utils/mongoose.js";
 dbConnect();
 import { myAntiHack } from "dto/antiHack";
+import { verifyAuth } from "dto/verifyAuth";
 import Message from "#models/Message.model.js";
 
 
@@ -11,13 +12,20 @@ export default async function handler(req,res){
 
     
     const {method, body} = req;
-
+    const authorization = req.headers.cookie.split('=',2);
+    
+    console.log(req.headers)
+   
     switch(method){
         case "GET":
             try{
-
-                const msg = await Message.find();
-                return res.status(200).json(msg);
+                
+                if ( await verifyAuth(authorization[1].split(';',1)[0])) {
+                    const msg = await Message.find().sort({'updatedAt': -1});
+                    return res.status(200).json(msg);
+                }
+                return res.status(205).json({msg : "puta"});
+        
             }catch(error){
                 return res.status(500).json({error:error.message});
             }

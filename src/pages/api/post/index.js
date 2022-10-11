@@ -10,7 +10,7 @@ import Post from "#models/Post.model.js";
 export default async function handler(req,res){
 
     const {method, body} = req;
-    console.log(req.url)
+    
     switch(method){
         case "GET":
             

@@ -1,22 +1,41 @@
 .skill{
+
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
-    border: 1px solid palegreen;
+    font-weight: 700;
+    padding: 20px;
+    color: rgb(17, 17, 19);
+    
+
+    
 }
 
 
 .skill-container{
-    padding-left: 20vw;
-    padding-right: 20vw ;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.401);
-    border: 1px solid red;
+
+    width: 96vw;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4vw 10vw;
+    justify-content: flex-start;
+    overflow: hidden;
+    max-width: 750px;
+    
+  
+   
+   
+      
+
+}
+
+#band{
+    
+    display: flex;
+    animation-duration: 20s;
+    animation-name: as;
+    animation-iteration-count: infinite;
+    animation-timing-function:cubic-bezier(.75,.75,.75,.75);
+    /* animation-play-state: paused; */
 
 }
 .skill-icon{
@@ -24,4 +43,13 @@
     
     width: 80px;
     height: 80px;
+}
+
+@keyframes as{
+    0%{
+        
+    }
+    100%{
+        transform: translateX(-50%);
+    }
 }

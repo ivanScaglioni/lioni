@@ -1,13 +1,43 @@
 
 
+.container-log{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .form-login{
+    font-size: 30px;
     gap: 30px;
-    height: 100vh;
-    
+    padding: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    
+    background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.7)  11.2%,
+        rgba(0, 0, 0, 0.7) 92.5%
+        ),
+    linear-gradient(
+        109.6deg,
+        rgb(0, 191, 255)  11.2%,
+        rgb(115, 0, 255) 92.5%
+      );
+}
+
+
+.input-login{
+    border-radius: 16px;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.log-in{
+    width: max-content;
+    background-color: greenyellow;
 }

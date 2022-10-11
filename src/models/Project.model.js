@@ -17,13 +17,13 @@ const projectSchema =  new Schema({
         type:String,
         required: [true, 'some description'],
         trim:true,
-        maxlength: [250, 'Tile must be less than 250 characters']
+        maxlength: [500, 'Tile must be less than 250 characters']
     },
     expand:{
         type:String,
         required:[true,'add a text or a body'],
         trim:true,
-        maxlength: [500, 'this must be less than 500 characters']
+        maxlength: [2000, 'this must be less than 500 characters']
     },
     github:{
         type:String,

@@ -1,42 +1,74 @@
-export default function PostDetail({post}){
+
+import Layout from "components/layout";
+import Notfound from "components/notfound";
+import { useEffect, useState } from "react";
+const axios = require('axios');
+
+export default function PostDetail({id}){
+
+    const [post, setPost] = useState({});
+    
+    async function data(){
+  
+        const res = await axios.get(`/api/post/${id}`);
+    
+        setPost(res.data)
+  
+    }
+    
+  
+  
+    useEffect(() => {
+        data();
+        
+      }, []); 
+  
    
     
     return(
-        <div className="card-post">
-            <div>
-              {post.title}
-            </div>
-            <div className="card-img">
-            {post.image != undefined &&
-                  
-                  <div className="card-img">
-                    <img className="image" src={`${post.image}`} />
-                  </div> 
 
+        <div className="container-v space">
+            {post.title != undefined
+                ?<div className="card">
+                    <h2>{post.title}</h2>
+                    <div className="card-img">
+                    {post.image != undefined &&
+                        
+                        <div>
+                            <img className="card-img" src={`${post.image}`} />
+                        </div> 
+        
+        
+                        }
+                    </div>
+                    <div>
+                        <p>
+                        {post.description}
+                        </p>
+                        <p>
+                        {post.expand}
+                        </p>
+                    </div>
+                </div>
+                :<Notfound></Notfound>
 
-                }
-            </div>
-            <div>
-                <p>
-                {post.description}
-                </p>
-                <p>
-                {post.expand}
-                </p>
-            </div>
+            }
+            
+            
         </div>
+        
+       
+       
+        
     )
 }
 
 
 export  async function getServerSideProps({query:{id}}){
 
-    const res = await  fetch(`${process.env.HOST}/api/post/${id}`)
-    if(!(res.status === 200 )) return{props:{}};
-    const data = await res.json()
-
+ 
     return{
-        props:{post:data}
+        props:{id}
     }
 
 

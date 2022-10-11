@@ -1,21 +1,39 @@
 import Link from "next/link";
 import Nofound from "components/notfound.js"
 import { useRouter } from 'next/router'
+import { useEffect, useState } from "react";
+const axios = require('axios');
 
-export default function ProjectDetail(props){
+export default function ProjectDetail({id}){
 
-    if(props.proj == undefined){
-        return(
-            <Nofound type="Project">
-
-            </Nofound>
-        )
-    }
     
-    const proj = props.proj
+  const [proj, setProjects] = useState({});
+    
+  async function data(){
+
+      const resproj = await axios.get(`/api/project/${id}`);
+  
+      setProjects(resproj.data)
+
+  }
+  
+
+
+  useEffect(() => {
+      data();
+      
+    }, []); 
+
+
+   
+    
+  
 
     return(
         <div>
+            {
+                
+            }
             <div className="card-project">
                 <div>
                   {proj.title}
@@ -37,16 +55,11 @@ export default function ProjectDetail(props){
 }
 
 
-export async function getServerSideProps(context){
+export async function getServerSideProps({query:{id}}){
     
    
-    const {query:{id}} = context; 
-    const resProj = await fetch(`${process.env.HOST}/api/project/${id}`)
-    if(!(resProj.status === 200)) return {props:{}};
-    const dataProj = await resProj.json()
-    
     return{
-        props: {proj:dataProj}
+        props: {id}
     }
 
 }

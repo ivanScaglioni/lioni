@@ -1,48 +1,52 @@
 import Notfound from "components/notfound";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+const axios = require('axios');
 
-export default function Projects(props) {
-    const projects = props.projects
+export default function Projects() {
+  
+
+  const [projects, setProjects] = useState({});
+    
+    async function data(){
+
+        const resproj = await axios.get('/api/project');
+    
+        setProjects(resproj.data)
+
+    }
+    
+ 
+
+    useEffect(() => {
+        data();
+        
+      }, []); 
+  
     return (
-      <section>
-          <h1>projects</h1>
+      <div className="container-v">
+          <h1 className="title space">PROJECTS</h1>
           {projects.length > 0 
             ? projects.map(proj =>(
-              <div key={proj._id} className="card-project">
-                <div>
-                  {proj.title}
-                </div>
+              <div key={proj._id} className="card">
+           
                 
-                <div className="card-img">
-                 
+                <div>
+                  <img className="card-img" src={`${proj.image}`} alt="" />
                 </div>
                 <div className="card-description">
                   {proj.description}
                 </div>
                 <Link href={`/projects/${proj._id}`} push>
-                  <a href="">ir</a>
+                  <a className="card-a" href="">Read</a>
                 </Link>
               </div>
             ))
             : <Notfound type="Projects" />
           }
-      </section>
+      </div>
     )
   }
   
-
-export async function  getStaticProps(context) {
-
-
-
-  const resProj = await fetch(`${process.env.HOST}/api/project`)
-  const dataProj = await resProj.json()
-
-
-
-  return {
-    props: {projects: dataProj} 
-  }
-}
 

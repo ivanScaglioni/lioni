@@ -1,0 +1,51 @@
+.msg-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 140px;
+    padding-block: 100px ;
+}
+
+.msg{
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 10px;
+    background-color: rgb(63, 66, 72);
+    box-shadow: 1px 1px 10px #000000;
+    font-size: 1.5rem;
+    width: 100%;
+    border-radius: 16px;
+    
+    font-weight: 600;
+    max-width: 900px;
+}
+
+.msg-name{
+    
+    color: #ff9999;
+    align-self: center;
+}
+
+.msg-message{
+    color: rgb(247, 220, 171);
+    padding: 20px;
+    font-weight: 400;
+    padding-block: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #14171dad;
+    
+}
+.msg-date{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f199ff;
+}
+.msg-contact{
+    color: #f199ff;
+    align-self: flex-end;
+    
+}

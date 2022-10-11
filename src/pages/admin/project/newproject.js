@@ -3,8 +3,8 @@ export default function NewProject(){
     return(
         <div >
     
-            <form className="form-new" action={'/api/post'} method="POST" >
-                <h1>nuevo project</h1>
+            <form className="form-new" action={'/api/project'} method="POST" >
+                <h1>New Project</h1>
                 <input className="input-new" type="text" name="title" placeholder="title " />
                 <textarea className="input-new" rows="5" cols="30" type="text" name="description" placeholder="little description of post" />
                 <textarea className="input-new" rows="5" cols="30" type="textA" name="expand" placeholder="body of post"/>

@@ -1,30 +1,154 @@
-.home-about{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: justify;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+
+    /* linear-gradient(
+        rgba(255, 255, 255, 0.6)  11.2%,
+        rgba(255, 255, 255, 0.6) 92.5%
+        ),
+    linear-gradient(
+        109.6deg,
+        rgb(0, 191, 255)  11.2%,
+        rgb(115, 0, 255) 92.5%
+      );
+ */
+
+    
    
     
-}
+   
 
-.perfil{
-    border: 1px solid rebeccapurple;
-    border-radius: 50%;
-    border: 5px solid #1d201d;
+
+
+
+
+
+
+/* /////////////////////////////////// */
+
+
+.about-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-top: 10vh;
+ 
+    
+}
+.about-card{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:
+    linear-gradient(
+        rgba(255, 255, 255, 0.6)  11.2%,
+        rgba(255, 255, 255, 0.6) 92.5%
+        ),
+    linear-gradient(
+        109.6deg,
+        rgb(0, 191, 255)  11.2%,
+        rgb(49, 0, 210) 92.5%
+      );
+    border-radius: 10px;
     overflow: hidden;
-    max-width: 400px;
-    min-width: 230px;
+    box-sizing: border-box;
+   
+ 
     
     
 }
+.picture{
 
-.home-ivan{
-    max-width: 600px;
-    min-width: 200px;
-    padding: 30px;
-    
-    
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    box-sizing: border-box;
+}
+.picture-container{
+    display: flex;
+    align-items: center;
 }
 
+.me{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    box-sizing: border-box;
+    
+
+}
+
+.info{
+    max-width: 500px;
+    text-align: justify;
+    box-sizing: border-box;
+   
+}
+
+.name{
+    width: 100%;
+    font-size: 30px;
+    padding-block: 5px;
+    color:rgb(255, 255, 255);
+    background-color: #272d32;
+    font-weight: 900;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.item{
+    padding: 20px;
+}
+
+.contactme{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+
+    border-radius: 50%;
+    min-width: 100px;
+    min-height: 100px;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+ 
+
+
+}
+
+.arrow{
+    animation-name: downuploop ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes downuploop {
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(20px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}

@@ -9,18 +9,22 @@ import 'styles/skillStyle.css';
 import 'styles/newStyle.css';
 import 'styles/about.css';
 import 'styles/loginStyle.css';
-
+import 'styles/stylePoPro.css';
+import 'styles/adminStyle.css';
+import 'styles/msgStyle.css';
+import 'styles/phoneStyle.css';
+import favi from "#public/favicon.ico"
 
 function MyApp({ Component, pageProps }) {
   return (
     <div id='app'>
       <Head>
         <title>Ivan Scaglioni</title>
-        
+        <link rel="icon" type="image/x-icon" href={`${favi.src}`}/>
+       
       </Head>
-      <div id='background'>
-      </div>
-      <Layout>
+      <div id='background'></div>
+      <Layout >
         <Component  {...pageProps} />
       </Layout>
 
