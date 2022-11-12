@@ -34,11 +34,11 @@ export default  function HomePage(props) {
 
   return (
 
-    <div className="container-v home">
+    <div className="container-v">
 
       <section className="home-section home-about"><CompAbout page="Home"/></section>
-      
-      
+    
+
       {projects.length > 0
         ?<section id="section-porj"><ProjectHome projects={projects} /></section>
         : <Notfound type="Projects" />
@@ -50,8 +50,8 @@ export default  function HomePage(props) {
         :<Notfound type="Posts" />
       }
       
+      
      
-    
     
     </div>
   )

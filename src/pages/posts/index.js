@@ -34,10 +34,14 @@ export default  function Posts() {
         {posts.length > 0 
           ? posts.map(post =>(
             <div className="card" key={post._id}>
-    
-              <div className="post-title">
-                {post.title}
-              </div>
+              
+              <Link href={`/posts/${post._id}`}>
+                <div className="post-title push">
+                  {post.title}
+                </div>
+              </Link>
+
+              <div className="card-date">{new Date(post.createdAt).toLocaleDateString()}</div>
               <div>
                 <img className="card-img" src={`${post.image}`} /> 
               </div>
@@ -47,9 +51,9 @@ export default  function Posts() {
  
               </div>
 
-              <Link href={`/posts/${post._id}`}>
-                <a href="" className="card-a">read</a>
-              </Link>
+                <Link href={`/posts/${post._id}`}>
+                  <a href="" className="card-a">read more</a>
+                </Link>
               </div>
 
           ))

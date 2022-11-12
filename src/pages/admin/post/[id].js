@@ -21,7 +21,7 @@ export default function EditPost({id}){
     }
         
     const handleRequest = async (e)=>{
-        e.preventDefault()
+        e.preventDefault();
         const res  = await axios({
             url: `/api/post/${id}`,
             method: 'PUT',

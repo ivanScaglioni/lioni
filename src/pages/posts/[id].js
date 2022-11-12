@@ -45,9 +45,9 @@ export default function PostDetail({id}){
                         <p>
                         {post.description}
                         </p>
-                        <p>
+                        <div>
                         {post.expand}
-                        </p>
+                        </div>
                     </div>
                 </div>
                 :<Notfound></Notfound>

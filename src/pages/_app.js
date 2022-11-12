@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Ivan Scaglioni</title>
         <link rel="icon" type="image/x-icon" href={`${favi.src}`}/>
-       
       </Head>
       <div id='background'></div>
       <Layout >

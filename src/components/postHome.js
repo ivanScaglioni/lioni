@@ -28,8 +28,10 @@ export default function PostHome({ posts }) {
   }
 
   useEffect(() => {
+  
+   handleBar(0);
+
     
-    handleBar(0);
     
   }, []);
 
@@ -114,7 +116,7 @@ export default function PostHome({ posts }) {
       
 
       <Link href="/posts">
-        <div className="title push">POSTS</div>
+        <div className="title push">BLOG</div>
       </Link>
 
                     
@@ -134,12 +136,12 @@ export default function PostHome({ posts }) {
 
   
 
-            <div className="card-header">
+          <div className="card-header">
             <Link href={`/posts/${myPost._id}`}>
               <h2 className="push">{myPost.title}</h2>
             </Link>
           </div>
-          <div className="card-date">{`${handleDate(myPost.createdAt)}`}</div>
+          <div className="card-date">{new Date(myPost.createdAt).toLocaleDateString()}</div>
           {myPost.image != undefined &&
 
             <div>

@@ -39,6 +39,7 @@ body{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
     
 }
 
@@ -63,9 +64,8 @@ body{
 }
 .container{
     display: flex;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    text-align: justify;
+    justify-content: center;
+    
     
    
 }
@@ -85,10 +85,10 @@ section{
     justify-content: center;
 }
 .title{
- 
+    margin-top: 60px;
     text-align: center;
     color: rgb(241, 255, 254);
-    font-size: 3.2rem;
+    font-size: 3rem;
     transition-duration: 1s;
   
     
@@ -116,7 +116,7 @@ section{
 /*            NOTFOUND             */
 
 .loading{
-     display: flex;
+    display: flex;
     margin: 100px ;
     width: 100px;
     height: 100px;
