@@ -41,7 +41,7 @@ export default  function HomePage(props) {
 
       {projects.length > 0
         ?<section id="section-porj"><ProjectHome projects={projects} /></section>
-        : <Notfound type="Projects" />
+        :<Notfound type="Projects" />
       }
       
 

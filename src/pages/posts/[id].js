@@ -1,58 +1,83 @@
 
-import Layout from "components/layout";
+const { marked } = require('marked');
 import Notfound from "components/notfound";
 import { useEffect, useState } from "react";
 const axios = require('axios');
+
 
 export default function PostDetail({id}){
 
     const [post, setPost] = useState({});
     
+    
     async function data(){
   
         const res = await axios.get(`/api/post/${id}`);
-    
-        setPost(res.data)
-  
+
+        if (res.statusText == 'OK'){
+            
+            setPost(res.data);
+            handleMd(res.data.expand);
+        }
+
+
+        
+        
     }
     
-  
+    const handleMd = (mydata)=>{
+        if (mydata != null){
+
+            const expandMd = document.getElementById('expand');
+            expandMd.innerHTML = marked.parse(mydata);
+
+        }
+        
+    }
+
   
     useEffect(() => {
         data();
         
-      }, []); 
+    }, []); 
+  
+   
+    
   
    
     
     return(
 
         <div className="container-v space">
-            {post.title != undefined
-                ?<div className="card">
-                    <h2>{post.title}</h2>
-                    <div className="card-img">
+            <div className="card container-v">
+                {post.title  != undefined 
+
+
+                ?
+                <div>
+                    <div className="card-header">
+                        <h2>{post.title}</h2>
+                    </div>
+                    <div className="card-date">{new Date(post.createdAt).toLocaleDateString()}</div>
                     {post.image != undefined &&
-                        
+
                         <div>
                             <img className="card-img" src={`${post.image}`} />
-                        </div> 
-        
-        
-                        }
-                    </div>
-                    <div>
-                        <p>
-                        {post.description}
-                        </p>
-                        <div>
-                        {post.expand}
                         </div>
+
+                    }
+                    <div className="card-description">
+                        {post.description}
                     </div>
                 </div>
-                :<Notfound></Notfound>
+                    
+                :
+                <Notfound/>
+                }
+                <div className="md card-expand" id="expand"></div>
+            </div>
 
-            }
+          
             
             
         </div>
