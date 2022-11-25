@@ -1,6 +1,5 @@
 
 
-import  Image from 'next/image';
 import vue from '#public/icons/icon-vue.svg';
 import javascript from '#public/icons/icon-javascript.svg';
 import git from '#public/icons/icon-git.svg';
@@ -18,46 +17,45 @@ export default function Skills(props) {
 
 
 
-    const arrskills = ['javascript','typescript','mongodb','node','git','webpack','html','css','vue','next']
-    const skills = [javascript,typescript,mongodb,node,git,webpack,html,css,vue,next]
-    var inde = 0;
+    const arrskills = ['javascript', 'typescript', 'mongodb', 'node', 'git', 'webpack', 'html', 'css', 'vue', 'next']
+    const skills = [javascript, typescript, mongodb, node, git, webpack, html, css, vue, next]
 
-  
 
-    const listSkills = skills.map((skill,inde,listSkills)=>
-        
+
+
+    const listSkills = skills.map((skill, inde, listSkills) =>
+
         <div className='skill' key={skill.src}>
-        
+
             <div>
-               
+
                 <img className='skill-icon' src={`${skill.src}`} alt="" />
 
             </div>
             <div className='skill-name'>
                 {arrskills[inde]}
             </div>
-        
+
 
 
         </div>
-        
-        
+
+
     );
-    return(
+    return (
 
         <div className='skill-section' >
 
-            <div>
-                SKILLS
-            </div>
-            
+
+
+
             <div className='skill-container' id="skillContainer">
                 <div id='band'>
                     {listSkills}
                     {listSkills}
                 </div>
-                
-           
+
+
             </div>
         </div>
 

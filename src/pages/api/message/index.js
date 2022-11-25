@@ -12,15 +12,15 @@ export default async function handler(req,res){
 
     
     const {method, body} = req;
-    const authorization = req.headers.cookie.split('=',2);
+    const authorization = req.headers.cookie;
     
-    console.log(req.headers)
+
    
     switch(method){
         case "GET":
             try{
                 
-                if ( await verifyAuth(authorization[1].split(';',1)[0])) {
+                if ( await verifyAuth(authorization) ){
                     const msg = await Message.find().sort({'updatedAt': -1});
                     return res.status(200).json(msg);
                 }

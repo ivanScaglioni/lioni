@@ -14,13 +14,23 @@ import 'styles/adminStyle.css';
 import 'styles/msgStyle.css';
 import 'styles/phoneStyle.css';
 import favi from "#public/favicon.ico"
+import { useEffect, useState } from "react";
+
 
 function MyApp({ Component, pageProps }) {
+
+  const [favisrc , setFavi] = useState('none');
+
+  useEffect(()=>{
+    setFavi(favi.src);
+  },[]);
+
   return (
     <div id='app'>
       <Head>
         <title>Ivan Scaglioni</title>
-        <link rel="icon" type="image/x-icon" href={`${favi.src}`}/>
+        <link rel="icon" type="image/x-icon" href={favisrc}/>
+        
       </Head>
       <div id='background'></div>
       <Layout >

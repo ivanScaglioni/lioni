@@ -1,5 +1,5 @@
-#contact{
-    
+#contact {
+
     background-color: #000F18;
     width: 100%;
     display: flex;
@@ -7,52 +7,54 @@
     align-items: center;
     align-self: center;
     justify-self: flex-end;
-    
-    
 
-   
+
+
+
 }
 
 
 
 
-#link-container{
+#link-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
+
     display: flex;
     width: 100%;
     padding-bottom: 40px;
 
 }
 
-.form-msg{
-    
+.form-msg {
+
     display: flex;
     flex-direction: column;
     align-self: center;
     gap: 2vw;
 }
-.input-msg::placeholder{
+
+.input-msg::placeholder {
     color: rgb(134, 135, 138);
-   
+
 }
-.container-msg{
+
+.container-msg {
     max-width: 100%;
     width: 500px;
     padding-bottom: 40px;
-    
+
 }
 
-.input-msg{
+.input-msg {
     /* background-color: #0f20279b; */
     background-color: transparent;
     padding-left: 10px;
     padding-top: 5px;
     min-height: 40px;
-
+    
     border-radius: 16px;
     outline: none;
     box-shadow: none;
@@ -60,21 +62,19 @@
     border-top: 1px solid #37D0DD;
     border-left: 1px solid #37D0DD;
     /* border-left: 0.2vw solid rgba(0, 0, 0, 0.63); */
-    background:#f5f5f500;
+    background: #f5f5f500;
     /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.27) 10%, rgba(255,255,255,0) 100%); */
-    color:#ffffff;
- 
-    font-size: 20px;
+    color: #ffffff;
 
- 
-    
+
 }
-.input-msg::placeholder{
+
+.input-msg::placeholder {
     color: #ffffff7a;
 
 }
 
-.btn-msg{
+.btn-msg {
     align-self: center;
     min-width: max-content;
     background-color: transparent;
@@ -89,87 +89,94 @@
     border-top: 1px solid #37D0DD;
     border-left: 1px solid #37D0DD;
     /* border-left: 0.2vw solid rgba(0, 0, 0, 0.63); */
-    background:#f5f5f500;
+    background: #f5f5f500;
     /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.27) 10%, rgba(255,255,255,0) 100%); */
-    color:#d8e9f0;
-    font-size: 20px;
+    color: #d8e9f0;
+    
 }
 
-.icon{
-   
+.icon {
+
     width: 50px;
-   
-}
-.err{
-    color:red;
+
 }
 
-#btn-greeting{
+.err {
+    color: red;
+}
+
+#btn-greeting {
     min-width: 156px;
 }
-.thanks{
-    background-color:#37D0DD;
+
+.thanks {
+    background-color: #37D0DD;
     color: #00050b;
 }
 
-.icon:hover{
-    filter: none ;
+.icon:hover {
+    filter: none;
 }
 
-.link{
+.link {
     padding-block: 1vw;
     display: flex;
     justify-content: center;
     width: 100%;
     transition-duration: 0.5s;
-   
-  
-    
+
+
+
 
 }
 
-.link:hover{
-   
+.link:hover {
+
     transform: scaleY(1.2);
-    
-    
+
+
 }
 
 
 
-.a-contact{
+.a-contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:max-content ;
+    width: max-content;
     color: #f6f0f0;
-    font-size: 18px;
+   
     padding-block: 15px;
     text-decoration: none;
     font-weight: 700;
     box-sizing: border-box;
-    
+
 }
-#a-gmail:hover{
+
+#a-gmail:hover {
     background-color: #E84545;
 }
-#a-telegram:hover{
+
+#a-telegram:hover {
     background-color: #3ebaca;
 }
-#a-linkedin:hover{
+
+#a-linkedin:hover {
     background-color: #00456f;
 }
-#a-github:hover{
+
+#a-github:hover {
     background-color: #353737;
 }
 
 
-.footer-nav{
-    
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-block: 50px;
     width: 100%;
     text-align: center;
-    background-color:#00050b;
-    
-}
+    background-color: #00050b;
 
+}

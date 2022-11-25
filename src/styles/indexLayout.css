@@ -3,11 +3,9 @@ body{
     display: flex;
     color: #fafafa;
     justify-content: center;
-    
     font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Quicksand', sans-serif; */
     font-weight: 300;
-    
+    font-size: var(--text-size-medium);
     
 
     
@@ -76,6 +74,10 @@ section{
     
 }
 
+input, textarea, button{
+    font-size: var(--text-size-small);
+}
+
 
 
 .container-h{
@@ -88,10 +90,8 @@ section{
     margin-top: 60px;
     text-align: center;
     color: rgb(241, 255, 254);
-    font-size: 3rem;
     transition-duration: 1s;
-  
-    
+    font-size: var(--title-size-m);
 }
 
 .title:hover{
@@ -112,6 +112,11 @@ section{
    
    
 }
+.a-push , .a-push:visited{
+    color: white;
+    text-decoration: none;
+
+}
 
 /*            NOTFOUND             */
 
@@ -125,6 +130,8 @@ section{
     animation-duration: 1s;
     animation-timing-function:ease;
     border-radius: 50%;
+    align-self: center;
+    justify-self: center;
   
     
 }
@@ -171,4 +178,48 @@ section{
 }
 
 
-/* ///////////////////////////// */
+/* --------------RESPONSE ERROR------------ */
+
+
+#response-error{
+    display: none;
+    background-color: rgb(255, 255, 255);
+    color: red;
+    border-radius: 20px;
+    padding: 5px;
+    font-weight: 1000;
+    margin: 100px ;
+}
+
+/* ----------- ROOT --------------------- */
+
+
+:root {
+
+   
+    --text-size-small:14px;
+    --text-size-medium:19px;
+    --title-size-m: 3.2rem;
+    --title-size-s: 2.1rem;
+   
+}
+
+/* --------- MEDIA RESPONSIVE DESING--------- */
+
+@media all and (max-width: 600px) {
+        
+   .title{
+        font-size: var(--title-size-s);
+   
+    }
+
+
+    
+    body{
+        font-size: var(--text-size-small);
+    }
+
+
+ 
+
+}

@@ -26,7 +26,7 @@
     max-height: 800px;
     box-sizing: border-box;
     
-   z-index: 2000;
+   
     
 }
 
@@ -61,6 +61,7 @@
     animation-name: power;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
+    z-index: 200;
     
 }
 
@@ -160,6 +161,8 @@
 .notification-photo{
     max-width: 50px;
     max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     background-color: #272d32;
     border-radius: 50%;
 }
@@ -234,7 +237,7 @@
     padding: 10px;
     padding-bottom: 2px;
     gap: 5px;
-    font-size: 17px;
+    
     margin-inline: 5px;
     margin-block: 2px;
     border-radius: 10px;
@@ -345,7 +348,7 @@
     padding: 5px;
     width: 100%;
     outline: none;
-    font-size: 15px;
+   
     font-weight: 600;
 }
 

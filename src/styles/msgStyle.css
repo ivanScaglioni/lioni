@@ -2,50 +2,64 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 140px;
+    gap: 40px;
     padding-block: 100px ;
 }
 
 .msg{
-    padding: 20px;
+    padding: 1vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    color: black;
+    color: rgb(255, 255, 255);
     gap: 10px;
-    background-color: rgb(63, 66, 72);
-    box-shadow: 1px 1px 10px #000000;
-    font-size: 1.5rem;
-    width: 100%;
+    background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.7)  11.2%,
+        rgba(0, 0, 0, 0.7) 92.5%
+        ),
+    linear-gradient(
+        109.6deg,
+        rgb(0, 191, 255)  11.2%,
+        rgb(115, 0, 255) 92.5%
+      );
+    /* box-shadow: 1px 1px 10px #c2acac; */
+   
+    width: 100vw;
     border-radius: 16px;
-    
     font-weight: 600;
-    max-width: 900px;
+    max-width: 700px;
 }
 
 .msg-name{
-    
-    color: #ff9999;
+    color: #00ff88;
+    font-weight: 300;
     align-self: center;
 }
 
 .msg-message{
-    color: rgb(247, 220, 171);
-    padding: 20px;
+    
+    padding: 2vw;
     font-weight: 400;
-    padding-block: 10px;
     box-sizing: border-box;
     border-radius: 10px;
-    background-color: #14171dad;
+    background-color: #14171d;
     
 }
 .msg-date{
-    font-size: 1.1rem;
+
     font-weight: 400;
     color: #f199ff;
+    align-self: flex-end;
 }
 .msg-contact{
-    color: #f199ff;
+    color: #e9f2c6;
+    font-weight: 400;
+
     align-self: flex-end;
     
 }
+.mini-space{
+    padding-bottom: 20px;
+}
+

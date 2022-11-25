@@ -1,11 +1,16 @@
 {
-    "exclude": ["node_modules"],
+    "exclude": [
+        "node_modules"
+    ],
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
-            "#models/*":["./src/models/*"],
-            "#public/*":["./../public/*"]
+            "#models/*": [
+                "./src/models/*"
+            ],
+            "#public/*": [
+                "./../public/*"
+            ]
         },
-        
     }
 }

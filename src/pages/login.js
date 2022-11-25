@@ -3,11 +3,13 @@ import { useRouter } from "next/router";
 
 export default function LoginPage(){
     
-    const router = useRouter()
+    const router = useRouter();
+    
+    
+
     const handlelogin = async(e)=>{
-        e.preventDefault()
+        e.preventDefault();
         const pass = e.target[0].value
-        console.log(pass)
         const res = await fetch('api/auth',{method:'POST', body: JSON.stringify(pass)})
         if(res.status == 200) router.push('/admin');
         

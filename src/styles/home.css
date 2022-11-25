@@ -48,11 +48,11 @@
         rgb(0, 191, 255)  11.2%,
         rgb(115, 0, 255) 92.5%
       );
-    box-shadow: 10px 10px 15px black;
+    box-shadow: 10px 10px 15px #000000;
     border-radius: 16px;
     margin-bottom: 50px;
-    padding-inline: 10px;
-    text-align: justify;
+    padding-inline: 2vh;
+   
     
 }
 
@@ -60,6 +60,7 @@
 
 .card-date{
     text-align: end;
+    color: rgb(0, 242, 255);
 }
 
 
@@ -77,22 +78,44 @@
 
 .card-description{
     margin-block: 20px;
+    text-align: justify;
+   
+    
+
     
 }
 
 
 .card-header{
     padding-top: 20px;
+    padding-bottom: 5px;
 }
 
 .card-a{
-    color: rgb(0, 242, 255);
+    color: #87fbff;
     text-decoration: none;
     
 }
 
 .card-expand{
+    padding-left: 20px;
     margin-bottom: 20px;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+.card-links{
+    display: flex;
+   flex-wrap: wrap;
+    gap: 20px;
+    padding-block: 1vh;
+
+
+}
+.card-link, .card-link:visited{
+    color: #87fbff;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 /* ///////////////////// */
@@ -110,10 +133,11 @@
     position:sticky;
     bottom: 0px;
     width: 100%;
+    gap: 2vh;
     max-width: 730px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     z-index: 50;
     margin: 1vh;
@@ -127,12 +151,9 @@
 
 .btn-wheel{
 
-    width: 60px;
+    width: 55px;
     height: 40px;
-
-   /* border-radius: 50%; */
     border: none;
-    
     background:
     linear-gradient(
         180deg,
@@ -191,6 +212,7 @@
         rgb(0, 191, 255)  11.2%,
         rgb(115, 0, 255) 92.5%
       );
+    
 }
 
 
@@ -206,4 +228,112 @@
         rgb(255, 185, 93)  11.2%,
         rgb(255, 0, 0) 92.5%
       );
+}
+
+
+/* ////////////ANIMATIONS////////////////// */
+
+
+
+.moveright{
+    animation-name: moveright;
+    
+}
+.move-left{
+    animation-name: move-left;
+    
+}
+
+.moveleft{
+    animation-name: moveleft;
+   
+}
+.move-right{
+    animation-name: move-right;
+    
+}
+
+.disappear{
+    animation-name: disappear;
+    animation-duration: 2s;
+}
+
+.appear{
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+@keyframes appear {
+    from{
+        filter: opacity(0%);
+        
+     }
+     to{
+        transform: translateX(0px);
+        
+ 
+     }
+}
+
+@keyframes moveleft {
+    from{
+        filter: opacity(0%);
+        transform: translateX(-30px);
+     }
+     to{
+        transform: translateX(0px);
+        filter: opacity(100%);
+ 
+     }
+
+}
+
+@keyframes moveright {
+    from{
+        filter: opacity(0%);
+        transform: translateX(30px);
+     }
+     to{
+
+        filter: opacity(100%);
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes move-left {
+    from{
+        filter: opacity(0%);
+        transform: translateX(-30px);
+     }
+     to{
+        transform: translateX(0px);
+        filter: opacity(100%);
+ 
+     }
+}
+
+@keyframes move-right {
+    from{
+        filter: opacity(0%);
+        transform: translateX(30px);
+     }
+     to{
+
+        filter: opacity(100%);
+        transform: translateX(0);
+    }
+
+}
+
+
+
+@keyframes disappear{
+    from{
+        filter: opacity(100%);
+     }
+     to{
+         filter: opacity(0%);
+ 
+     }
 }

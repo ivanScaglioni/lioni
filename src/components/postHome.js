@@ -2,37 +2,26 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
-import arrowBack from '#public/icons/arrow_back_black.svg';
 
 
 export default function PostHome({ posts }) {
 
 
 
-  const [ind , setInd ] = useState(0);
+  const [ind, setInd] = useState(0);
   const len = posts.length;
   const [myPost, setPost] = useState(posts[0]);
-  
-  function reset(){
-    setInd(0)
-  }
 
 
 
-  const handleDate = (d) => {
-    const date = new Date(d)
-    const prettyDate = date.toLocaleDateString()
-    return (prettyDate)
-  }
 
   useEffect(() => {
-  
-   handleBar(0);
 
-    
-    
+    handleBar(0);
+
+
+
   }, []);
 
 
@@ -41,21 +30,21 @@ export default function PostHome({ posts }) {
 
   const handleBar = (i) => {
     const probar = document.getElementById('bar');
-    if (len > 0){
+    if (len > 0) {
       const porcien = 100 / len;
-      
-      probar.style.width=`${++i*porcien}%`
-      
+
+      probar.style.width = `${++i * porcien}%`
+
     }
-  
+
 
   }
-  
 
 
 
 
-  const handlePost =  (e) => {
+
+  const handlePost = (e) => {
     const myElement = document.getElementById('a');
     if (e.target.id == 'btn-left') {
       if (myElement.className.includes('moveleft')) {
@@ -67,12 +56,12 @@ export default function PostHome({ posts }) {
       } else if (myElement.className.includes('moveright')) {
         myElement.className = myElement.className.replace('moveright', 'move-left')
       }
-      if ( ind == 0) {
-        ind=len-1;
-        setInd(len-1);
+      if (ind == 0) {
+        ind = len - 1;
+        setInd(len - 1);
         setPost(posts[ind]);
 
-      }else{
+      } else {
         setInd(--ind)
         setPost(posts[ind])
       }
@@ -86,22 +75,22 @@ export default function PostHome({ posts }) {
       } else if (myElement.className.includes('moveleft')) {
         myElement.className = myElement.className.replace('moveleft', 'move-right')
       }
-      
-      if ( ind == (len-1)) {
-        
-        ind=0;
+
+      if (ind == (len - 1)) {
+
+        ind = 0;
         setInd(0);
         setPost(posts[ind])
 
-        
-      }else{
+
+      } else {
         setInd(++ind);
         setPost(posts[ind]);
 
       }
     }
 
-    // console.log("salida: ", ind)
+
 
     handleBar(ind);
 
@@ -113,64 +102,77 @@ export default function PostHome({ posts }) {
 
   return (
     <div className="home-section">
-      
+
 
       <Link href="/posts">
         <div className="title push">BLOG</div>
       </Link>
 
-                    
+
       <div className="wheel">
-        
+
         <button type="" className="btn-wheel btn-back" onClick={handlePost} id="btn-left" ></button>
 
         <div className="ball-container"><div className="progresive-bar" id="bar"></div></div>
 
         <button type="" className="btn-wheel btn-next" onClick={handlePost} id="btn-right" ></button>
-       
+
       </div>
 
-     
-              
+
+
       <div className="post-card card moveleft card-home" id="a">
 
-  
+        <div className="card-header">
+        
+          <Link href={`/posts/${myPost._id}`}>
+            <a href="" className="a-push"> <h2 className="push">{myPost.title}</h2> </a>
+          </Link>
+         
+        </div>
+        <div className="card-date">{new Date(myPost.createdAt).toLocaleDateString()}</div>
+        {myPost.image != undefined &&
 
-          <div className="card-header">
-            <Link href={`/posts/${myPost._id}`}>
-              <h2 className="push">{myPost.title}</h2>
-            </Link>
+          <div>
+            <img className="card-img" src={`${myPost.image}`} />
           </div>
-          <div className="card-date">{new Date(myPost.createdAt).toLocaleDateString()}</div>
-          {myPost.image != undefined &&
-
-            <div>
-              <img className="card-img" src={`${myPost.image}`} />
-            </div>
 
 
+        }
+
+        <div className="card-description">
+          {myPost.description}
+        </div>
+        
+        <div className="card-links">
+          {myPost.github != undefined &&
+            
+            <a className="card-link"href={myPost.github}>{'-'} Github</a>
+         
           }
+          {myPost.website != undefined &&
+            
+            <a className="card-link" href={myPost.website}>{'-'} Website </a>
+            
+          }
+        </div>
 
 
-          
-          <div className="card-description">
-            {myPost.description}
-          </div>
       </div>
 
-       
-    
 
 
 
-      
-
-          
 
 
-  
+
+
+
+
+
+
     </div>
 
-    
+
   )
 }

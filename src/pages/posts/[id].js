@@ -14,11 +14,15 @@ export default function PostDetail({id}){
   
         const res = await axios.get(`/api/post/${id}`);
 
-        if (res.statusText == 'OK'){
-            
+        if (res.status == 200){
             setPost(res.data);
             handleMd(res.data.expand);
+
+        }else{
+            const ok = document.getElementById('response-ok').style.display = "none";
+            const err = document.getElementById('response-error').style.display = "flex";
         }
+
 
 
         
@@ -49,7 +53,7 @@ export default function PostDetail({id}){
     return(
 
         <div className="container-v space">
-            <div className="card container-v">
+            <div id="response-ok" className="card">
                 {post.title  != undefined 
 
 
@@ -69,15 +73,31 @@ export default function PostDetail({id}){
                     <div className="card-description">
                         {post.description}
                     </div>
+                    <div className="card-links">
+                        {post.github != undefined &&
+                            
+                            <a className="card-link"href={post.github}>{'-'} Github</a>
+                        
+                        }
+                        {post.website != undefined &&
+                            
+                            <a className="card-link" href={post.website}>{'-'} Website </a>
+                            
+                        }
+                    </div>
                 </div>
                     
                 :
-                <Notfound/>
+                <Notfound status="loading"/>
                 }
                 <div className="md card-expand" id="expand"></div>
             </div>
 
           
+            <div id="response-error">
+                <Notfound type="Projects" status="error" />
+            </div>
+      
             
             
         </div>

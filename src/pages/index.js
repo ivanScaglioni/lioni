@@ -13,11 +13,10 @@ export default  function HomePage(props) {
   const [projects, setProjects] = useState({});
     
     async function data(){
-        const res = await axios.get('/api/post');
-        const resproj = await axios.get('/api/project');
-        setPosts(res.data)
-        setProjects(resproj.data)
-        console.log(posts)
+        const res = await axios.get('/api/post/home');
+        const resproj = await axios.get('/api/project/home');
+        setPosts(res.data);
+        setProjects(resproj.data);
     }
     
  
@@ -41,13 +40,13 @@ export default  function HomePage(props) {
 
       {projects.length > 0
         ?<section id="section-porj"><ProjectHome projects={projects} /></section>
-        :<Notfound type="Projects" />
+        :<Notfound type="Projects" status="loading" />
       }
       
 
       {posts.length > 0
         ?<section  id="section-post"><PostHome posts={posts}/></section>
-        :<Notfound type="Posts" />
+        :<Notfound type="Posts" status="loading" />
       }
       
       

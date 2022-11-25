@@ -1,16 +1,16 @@
 import Navbar from './navbar.js'
 import Footer from './footer.js'
 
-export default function Layout({ children, footer }) {
-  
+export default function Layout({ children }) {
 
-    return (
-      <>
-        <Navbar />
-        <main>{children}</main>
-        <Footer/>
-      </>
-    )
+
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </>
+  )
 
 
 

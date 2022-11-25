@@ -1,45 +1,45 @@
 import { Schema, models, model } from "mongoose";
 
-const projectSchema =  new Schema({
-    title:{
+const projectSchema = new Schema({
+    title: {
         type: String,
         required: [true, 'Title is requiered'],
-        unique:true,
-        trim:true,
+        unique: true,
+        trim: true,
         maxlength: [40, 'Tile must be less than 40 characters']
     },
-    image:{
-        type:String,
+    image: {
+        type: String,
         default: undefined,
-        trim:true
+        trim: true
     },
-    description:{
-        type:String,
+    description: {
+        type: String,
         required: [true, 'some description'],
-        trim:true,
-        maxlength: [500, 'Tile must be less than 250 characters']
+        trim: true,
+        maxlength: [500, 'Tile must be less than 500 characters']
     },
-    expand:{
-        type:String,
-        required:[true,'add a text or a body'],
-        trim:true,
-        maxlength: [2000, 'this must be less than 500 characters']
+    expand: {
+        type: String,
+        required: [true, 'add a text or a body'],
+        trim: true,
+        maxlength: [2000, 'this must be less than 2000 characters']
     },
-    github:{
-        type:String,
+    github: {
+        type: String,
         default: undefined,
-        trim:true,
+        trim: true,
     },
-    website:{
-        type:String,
+    website: {
+        type: String,
         default: undefined,
-        trim:true,
+        trim: true,
     }
 
-    
+
 }, {
-    timestamps:true,
-    versionKey:false
+    timestamps: true,
+    versionKey: false
 })
 
 

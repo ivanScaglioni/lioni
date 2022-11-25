@@ -2,7 +2,7 @@ import { dbConnect } from "utils/mongoose.js";
 dbConnect()
 
 import Project from "#models/Project.model.js";
-
+import { verifyAuth } from "dto/verifyAuth";
 
 
 
@@ -10,6 +10,8 @@ import Project from "#models/Project.model.js";
 export default async function handler(req,res){
     
     const {method, body} = req;
+
+    const isLogin = await verifyAuth(req.headers.cookie);
 
     switch(method){
 
@@ -19,16 +21,20 @@ export default async function handler(req,res){
             return res.status(200).json(proj);
 
         case "POST":
+            if(isLogin){
+                try {
 
-            try {
+                    const newProj = new Project(body);
+                    const saveProj = await newProj.save();
+                    return res.status(200).json({hola:"holaaaaaaaaaa"});
+                } catch (error) {
+                   
+                    return res.status(400);
+                }
+            }else{
+                return res.status(404).json({msg:"Not authorized"});
+            };
 
-                const newProj = new Project(body);
-                const saveProj = await newProj.save();
-                return res.status(201);
-            } catch (error) {
-               
-                return res.status(400);
-            }
 
         
         default:

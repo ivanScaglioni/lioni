@@ -5,15 +5,15 @@ export default function Admin(props){
 return(
     <div className="admin-menu">
         <Link href="/admin/messages">
-            <p className="push">Messages</p>
+            <p className="push">MESSAGES</p>
         </Link>
 
         <Link href="/admin/project">
-            <p className="push">Projects</p>
+            <p className="push">PROJECTS</p>
         </Link>
 
         <Link href="/admin/post">
-            <p className="push">Post</p>
+            <p className="push">BLOG</p>
         </Link>
     </div>
 )
