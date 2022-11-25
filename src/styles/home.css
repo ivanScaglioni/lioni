@@ -132,7 +132,7 @@
 .wheel{
     position:sticky;
     bottom: 0px;
-    width: 100%;
+    width: 90%;
     gap: 2vh;
     max-width: 730px;
     box-sizing: border-box;
@@ -140,7 +140,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 50;
-    margin: 1vh;
+    margin: 2vh;
 
   
  
@@ -171,6 +171,8 @@
     color:rgb(0, 0, 0);
     z-index: 10;
     cursor: pointer;
+
+    
 
     
 }
