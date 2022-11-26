@@ -118,9 +118,9 @@ export default function ProjectHome({ projects }) {
            
           </Link>
         </div>
-        <div className="card-date">
-          <div>{`${handleDateProj(myProj.createdAt)}`}</div>
-        </div>
+        
+        
+        
 
         {myProj.image != undefined &&
 
@@ -130,7 +130,7 @@ export default function ProjectHome({ projects }) {
 
 
         }
-
+        <div className="card-date">{`${handleDateProj(myProj.createdAt)}`}</div>
 
 
         <div className="card-description">

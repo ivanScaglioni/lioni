@@ -130,7 +130,7 @@ export default function PostHome({ posts }) {
           </Link>
          
         </div>
-        <div className="card-date">{new Date(myPost.createdAt).toLocaleDateString()}</div>
+        
         {myPost.image != undefined &&
 
           <div>
@@ -139,7 +139,7 @@ export default function PostHome({ posts }) {
 
 
         }
-
+        <div className="card-date">{new Date(myPost.createdAt).toLocaleDateString()}</div>
         <div className="card-description">
           {myPost.description}
         </div>

@@ -120,6 +120,7 @@ input, textarea, button{
 
 /*            NOTFOUND             */
 
+
 .loading{
     display: flex;
     margin: 100px ;
@@ -196,7 +197,7 @@ input, textarea, button{
 
 :root {
 
-   
+  
     --text-size-small:14px;
     --text-size-medium:19px;
     --title-size-m: 3.2rem;
@@ -207,19 +208,15 @@ input, textarea, button{
 /* --------- MEDIA RESPONSIVE DESING--------- */
 
 @media all and (max-width: 600px) {
-        
-   .title{
+
+    .title{
         font-size: var(--title-size-s);
-   
     }
-
-
     
     body{
         font-size: var(--text-size-small);
     }
 
 
- 
 
 }

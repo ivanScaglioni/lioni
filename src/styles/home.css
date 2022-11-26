@@ -1,6 +1,7 @@
 
 
 
+
 .home-section{
     display: flex;
     flex-direction: column;
@@ -61,7 +62,7 @@
 .card-date{
     text-align: end;
     color: rgb(0, 242, 255);
-    font-size: var(--text-size-small);
+    font-size: 11px;
 }
 
 
@@ -78,7 +79,7 @@
 
 
 .card-description{
-    margin-block: 20px;
+    margin-block: 10px;
     text-align: justify;
    
     

@@ -145,7 +145,7 @@
     padding: 8px;
 
     display: flex;
-    background-color: #132337;
+    background-color: #191a1c;
     
 
     gap: 10px;
@@ -354,6 +354,12 @@
 
 #option_0{
     display: none;
+    
+}
+
+.send-msg{
+    width: 50px;
+    height: 35px;
     
 }
 
