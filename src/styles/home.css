@@ -61,6 +61,7 @@
 .card-date{
     text-align: end;
     color: rgb(0, 242, 255);
+    font-size: var(--text-size-small);
 }
 
 

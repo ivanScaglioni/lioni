@@ -21,8 +21,8 @@ export default function Footer() {
 
 
     const handleChange = (e) => {
-        setMessage({ ...message, [e.target.name]: e.target.value })
-    }
+        setMessage({ ...message, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -51,7 +51,7 @@ export default function Footer() {
         }, 5000);
         reset;
 
-    }
+    };
 
 
 
