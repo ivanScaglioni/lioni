@@ -11,7 +11,9 @@ body{
     
    
 }
-
+a , a:visited{
+    color: #87fbff;
+}
 #__next{
     width: 100%;
     overflow: hidden;
