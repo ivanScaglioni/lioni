@@ -12,7 +12,7 @@ export default async function handler(req,res){
 
     
     const {method, body} = req;
-    const authorization = await req.cookies.get('authorization');
+    const authorization = req.headers.cookie;
 
    
     switch(method){

@@ -15,7 +15,7 @@ export default async (req, res) => {
     if(!isId)return res.status(400).json("no valid id received");
 
    
-    const isLogin = await verifyAuth(req.cookies.get('authorization'));
+    const isLogin = await verifyAuth(req.headers.cookie);
 
     switch (method) {
 

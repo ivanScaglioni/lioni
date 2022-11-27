@@ -1,17 +1,18 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { serialize } from 'cookie';
+import { verifyAuth } from "dto/verifyAuth.js";
 
 export default async (req, res) => {
 
 
 
     const { method, body } = req;
-    const { authorization } = req.headers;
+    const isLogin = await verifyAuth(req.headers.cookie);
 
 
     switch (method) {
         case "GET":
-            if (!authorization) return res.status(401);
+            if (!isLogin) return res.status(401);
             try {
                 const encoder = new TextEncoder();
                 const jwtData = await jwtVerify(authorization, encoder.encode(process.env.PRIVATE_KEY))
@@ -46,7 +47,7 @@ export default async (req, res) => {
             }
 
         case 'DELETE':
-            if (!authorization) return res.status(401).json({ error: 'no token' });
+            if (!isLogin) return res.status(401).json({ error: 'no token' });
             try {
                 const encoder = new TextEncoder();
                 const jwtData = await jwtVerify(authorization, encoder.encode(process.env.PRIVATE_KEY))

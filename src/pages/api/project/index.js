@@ -11,7 +11,7 @@ export default async function handler(req,res){
     
     const {method, body} = req;
 
-    const isLogin = await verifyAuth(req.cookies.get('authorization'));
+    const isLogin = await verifyAuth(req.headers.cookie);
 
     switch(method){
 
