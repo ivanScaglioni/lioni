@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server"
-import { jwtVerify } from "jose"
+import { NextResponse } from "next/server";
+import { jwtVerify } from "jose";
 
 export async function middleware(req) {
-    const jwt = req.cookies.get('authorization')
+    const jwt = req.cookies.get('authorization');
 
     if (jwt === undefined) {
         return NextResponse.redirect(new URL('/login', req.url))

@@ -11,7 +11,7 @@ export default async function handler(req,res){
     
     const {method, body} = req;
 
-    const isLogin = await verifyAuth(req.headers.cookie);
+    const isLogin = await verifyAuth(req.cookies.get('authorization'));
 
     switch(method){
 
@@ -26,7 +26,7 @@ export default async function handler(req,res){
 
                     const newProj = new Project(body);
                     const saveProj = await newProj.save();
-                    return res.status(200).json({hola:"holaaaaaaaaaa"});
+                    return res.status(200).json({msg:"Porject saved successfully"});
                 } catch (error) {
                    
                     return res.status(400);

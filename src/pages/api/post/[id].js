@@ -15,8 +15,8 @@ export default async (req, res) => {
     const isId = isValidObjectId(id);
     if(!isId)return res.status(400).json("no valid id received");
 
-
-    const isLogin = await verifyAuth(req.headers.cookie);
+  
+    const isLogin = await verifyAuth(req.cookies.get('authorization'));
 
 
 
@@ -35,7 +35,7 @@ export default async (req, res) => {
                     new : true,
                 });
                 if(!upPost) return res.status(404).json({msg:"post not found"});
-                return res.status(200);
+                return res.status(200).json({msg:"post edit"});
             }else{
                 return res.status(404).json({msg:"Not authorized"});
             };

@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import CompAbout from "components/compAbout";
 import PostHome from "components/postHome";
 import ProjectHome from "components/projectHome";

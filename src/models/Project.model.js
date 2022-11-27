@@ -6,7 +6,7 @@ const projectSchema = new Schema({
         required: [true, 'Title is requiered'],
         unique: true,
         trim: true,
-        maxlength: [40, 'Tile must be less than 40 characters']
+        maxlength: [100, 'Tile must be less than 100 characters']
     },
     image: {
         type: String,

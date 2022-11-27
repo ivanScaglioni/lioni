@@ -10,7 +10,7 @@ import Post from "#models/Post.model.js";
 export default async function handler(req,res){
 
     const {method, body} = req;
-    const isLogin = await verifyAuth(req.headers.cookie);
+    const isLogin = await verifyAuth(req.cookies.get('authorization'));
 
     switch(method){
         case "GET":

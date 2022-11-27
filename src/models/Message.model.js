@@ -5,13 +5,13 @@ const messageSchema = new Schema({
         type: String,
         required: [true, 'name is requiered'],
         trim: true,
-        maxlength: [30, 'name must be less than 30 characters']
+        maxlength: [60, 'name must be less than 60 characters']
     },
     contact: {
         type: String,
         default: undefined,
         trim: true,
-        maxlength: [50, 'name must be less than 50 characters']
+        maxlength: [100, 'name must be less than 100 characters']
     },
     msg4me: {
         type: String,
