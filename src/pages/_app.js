@@ -7,7 +7,6 @@ import 'styles/footerStyle.css';
 import 'styles/navbarStyle.css';
 import 'styles/skillStyle.css';
 import 'styles/newStyle.css';
-import 'styles/about.css';
 import 'styles/loginStyle.css';
 import 'styles/stylePoPro.css';
 import 'styles/adminStyle.css';

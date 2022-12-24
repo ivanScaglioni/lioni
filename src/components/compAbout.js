@@ -33,6 +33,7 @@ export default function CompAbout(props) {
     const [lastMsg, setLastMsg] = useState('typing...')
     const [idOption, setIdOption] = useState('none');
     const [indexOption, setIndexOption] = useState(0);
+    const [ lastScreen , setLastScreen ] = useState('screen1');
 
     const [arrowBackSrc, setArrowBackScr] = useState('none');
     const [sendSrc, setSendSrc] = useState('none');
@@ -186,6 +187,7 @@ export default function CompAbout(props) {
         e.preventDefault();
         const screen1 = document.getElementById('screen-1');
         const screen2 = document.getElementById('screen-2');
+        const screen3 = document.getElementById('screen-3');
         if (action == 'notification') {
 
             screen1.style.display = 'none';
@@ -193,16 +195,42 @@ export default function CompAbout(props) {
             const notif = document.getElementById('screen-1').style.animationName = 'none'
             const chat = document.getElementById('chat');
             chat.scrollTo(chat.scrollHeight - 1, chat.scrollHeight);
-
+            setLastScreen('screen2');
 
 
         } else if (action == 'back') {
 
-            screen2.style.display = 'none';
-            screen1.style.display = 'flex';
-            document.getElementById('cube').style.display = 'none';
-            const notif = document.getElementById('screen-1').style.animationName = 'none'
+            if (e.target.id == 'back-screen-2') {
+                screen2.style.display = 'none';
+                screen1.style.display = 'flex';
+                document.getElementById('cube').style.display = 'none';
+                const notif = document.getElementById('screen-1').style.animationName = 'none';
+                setLastScreen('screen1');
 
+            }else if(e.target.id == 'back-screen-3'){
+                
+                screen3.style.display = 'none';
+                if (lastScreen == 'screen1' ) {
+                    screen1.style.display = 'flex';
+                    setLastScreen('screen1');
+                }else{
+                    screen2.style.display = 'grid';
+                    setLastScreen('screen2');
+                }
+                
+
+            }
+           
+
+
+        }else if(action == 'perfil'){
+
+            screen1.style.display = 'none';
+            screen2.style.display = 'none';
+            screen3.style.display = 'flex';
+            document.getElementById('cube').style.display = 'none';
+            const notif = document.getElementById('screen-1').style.animationName = 'none';
+            
 
         }
     }
@@ -215,15 +243,15 @@ export default function CompAbout(props) {
         return (
             <div className='contanier-center'>
                 <div className='phone'>
-                    <div id='screen-1'>
+                    <div id='screen-1' className='screen'>
                         <div id='cube'>
                             <img className='cube-img' src={ils} alt="" />
                             <div className='cube-options'>
                                 <img className='push' src={closeCube} onClick={() => document.getElementById('cube').style.display = 'none'} alt="" />
 
-                                <Link href="/about">
-                                    <img className='push' src={infoCube} alt="" />
-                                </Link>
+                                
+                                <img className='push' src={infoCube} onClick={(e) => handlePhone(e, 'perfil')} alt="" />
+
 
                                 <img className='push' src={chatCube} alt="" onClick={(e) => handlePhone(e, 'notification')} />
 
@@ -251,12 +279,12 @@ export default function CompAbout(props) {
 
 
 
-                    <div id='screen-2'>
+                    <div id='screen-2' className='screen'>
 
 
                         <div className='notification' id='noti'>
 
-                            <img className='push' src={arrowBackSrc} onClick={(e) => handlePhone(e, 'back')} />
+                            <img className='push' id='back-screen-2' src={arrowBackSrc} onClick={(e) => handlePhone(e, 'back')} />
 
 
                             <img className='notification-photo' src={ils} alt="" />
@@ -271,9 +299,9 @@ export default function CompAbout(props) {
                             </div>
 
                             <div className='notification-info'>
-                                <Link href="/about">
-                                    <img className='push' src={infoCube} alt="" />
-                                </Link>
+                            
+                                <img className='push'  src={infoCube} onClick={(e) => handlePhone(e, 'perfil')} alt="" />
+                   
                             </div>
                         </div>
 
@@ -309,82 +337,68 @@ export default function CompAbout(props) {
 
                     </div>
 
+                    <div id="screen-3" className='screen'>
+                       
+                        <div className='about-card'>
+                            <div id='contanier-arrow-3'>
+                                <img className='push' id='back-screen-3' src={arrowBackSrc} onClick={(e) => handlePhone(e, 'back')} />
+                            </div>
+                           
+                            <div className='me'>
+                                <div className='picture-container item'>
+                                    <div className='picture '>
+                                        <Image src={ils5} width={200} height={200} ></Image>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className='name'>
+                                IVAN SCAGLIONI
+                            </div>
+                            <div className='description-screen-3'>
+                                Hi, I'm a web developer who wants to work on projects and help his business grow.
+                            </div>
+                            <div className='title-screen-3'>
+                                Skills:
+                            </div>
+                            <Skills />
+                            
+                           
+                        
+
+                            <div className='title-screen-3'>
+                                Links:
+                            </div>
+                            
+                            <div className='container-a-phone'>
+                                <a className="a-phone" target={"_blank"} href="mailto:ivanscargentino@gmail.com">Gmail</a>
+                                <a className="a-phone" target={"_blank"} href="https://www.linkedin.com/in/ivan-sca-6b7719221/">Linkedin</a>                                      
+                                <a className="a-phone" target={"_blank"} href="https://t.me/IvanScaglioni">{''}Telegram</a>
+                                <a className="a-phone" target={"_blank"} href="https://github.com/ivanScaglioni">Github</a>
+                            </div>
+                            
+
+
+                        
+                         
+
+
+                        </div>
+                        
+                    </div>
+
                 </div>
 
 
 
+               
 
             </div>
 
 
         )
-    } else {
-        return (
-
-            <div className='about-page '>
-
-                <div className='about-card '>
-                    <div className='name'>
-                        IVAN SCAGLIONI
-                    </div>
-                    <div className='me'>
-
-                        <div className='picture-container item'>
-                            <div className='picture '>
-                                <Image src={perfil2} width={200} height={200} ></Image>
-                            </div>
-
-                        </div>
-                        <div className='info-container'>
-                            <div className='info item'>
-                                <h2>Study</h2>
-                                <ul>
-                                    <li>Logic and efficiency of algorithms </li>
-                                    <li>Recursion</li>
-                                    <li>Data structures (lists, trees, array, etc)</li>
-                                    <li>Problem solving</li>
-                                    <li>Backend</li>
-                                    <li>Frontend</li>
-                                </ul>
-
-
-
-                                <h2> Languages</h2>
-                                <ul>
-                                    <li>Spanish</li>
-                                    <li>English ( read and write )</li>
-                                </ul>
-
-
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-                    <Skills />
-
-
-
-
-                </div>
-
-                <Link href='#contact' replace scroll={false}>
-                    <div className='container-v contactme push'>
-
-                        Contact
-                        <img className='arrow' src={`${arrow.src}`} alt="" />
-                    </div>
-
-                </Link>
-
-            </div>
-
-        )
-    }
+    } 
+   
 
 
 }

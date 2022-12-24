@@ -108,7 +108,7 @@ export default function ProjectHome({ projects }) {
 
 
 
-      <div className="post-card card moveleft card-home" id="b">
+      <div className="post-card card moveleft card-home" id="b" >
 
 
 
