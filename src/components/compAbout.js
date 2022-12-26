@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import ils5 from "#public/ils5.jpg";
-import arrow from '#public/icons/arrow_down.svg';
 import arrow_back from '#public/icons/arrow_back_white.svg';
 import send from '#public/icons/send_white.svg';
 import info from '#public/icons/info_white.svg';
 import chat from '#public/icons/chat_white.svg';
 import close from '#public/icons/close_white.svg';
-import perfil2 from "#public/ils2.jpg";
 import Skills from "components/skills";
 import Link from 'next/link';
+import gmail from "#public/icons/icon-gmail.svg";
+import telegram from "#public/icons/icon-telegram.svg";
+import linkedin from "#public/icons/icon-linkedin.svg";
+import github from "#public/icons/icon-github.svg";
+
 import { useEffect, useState } from 'react';
 
 
@@ -371,10 +374,31 @@ export default function CompAbout(props) {
                             </div>
                             
                             <div className='container-a-phone'>
-                                <a className="a-phone" target={"_blank"} href="mailto:ivanscargentino@gmail.com">Gmail</a>
+                                <a className="a-contact" target={"_blank"} href="mailto:ivanscargentino@gmail.com">
+                                    <div className="icon">
+                                        <Image src={gmail} layout="responsive" />
+                                    </div>
+                                </a>
+                                <a className="a-contact" target={"_blank"} href="https://t.me/IvanScaglioni">
+                                    <div className="icon">
+                                        <Image src={telegram} layout="responsive" />
+                                    </div>
+                                </a>
+                                <a className="a-contact" target={"_blank"} href="https://www.linkedin.com/in/ivan-sca-6b7719221/">
+                                    <div className="icon">
+                                        <Image src={linkedin} layout="responsive" />
+                                    </div>
+                                </a>
+                                <a className="a-contact" target={"_blank"} href="https://github.com/ivanScaglioni">
+                                    <div className="icon">
+                                        <Image src={github} layout="responsive" />
+                                    </div>
+                                </a>
+
+                                {/* <a className="a-phone" target={"_blank"} href="mailto:ivanscargentino@gmail.com">Gmail</a>
                                 <a className="a-phone" target={"_blank"} href="https://www.linkedin.com/in/ivan-sca-6b7719221/">Linkedin</a>                                      
                                 <a className="a-phone" target={"_blank"} href="https://t.me/IvanScaglioni">{''}Telegram</a>
-                                <a className="a-phone" target={"_blank"} href="https://github.com/ivanScaglioni">Github</a>
+                                <a className="a-phone" target={"_blank"} href="https://github.com/ivanScaglioni">Github</a> */}
                             </div>
                             
 

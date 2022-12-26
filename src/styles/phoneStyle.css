@@ -40,12 +40,11 @@
 .container-a-phone{
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     align-self: flex-start;
     gap: 20px;
-   
     padding-top: 20px ;
    
 }
