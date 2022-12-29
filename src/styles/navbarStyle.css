@@ -1,3 +1,5 @@
+
+
 .nav_bar{
     display: flex;
     flex-wrap: wrap;
@@ -7,8 +9,9 @@
     position: fixed;
     margin-left: 10px;
     margin-top: 5px;
-    z-index: 150;
+    z-index: 1100;
     
+
 }
 .a-nav , .a-nav:visited{
     display: flex;
@@ -33,7 +36,7 @@
     min-height: 100vh;
     width: 100%;
     grid-template-columns: auto 1fr;
-    z-index: 100;
+    z-index: 1000;
 }
 #menu-icon{
     filter: drop-shadow(0px 0px 5px #ff6200);
@@ -61,6 +64,7 @@
     animation-name: down;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 
 }
 .up{
@@ -78,7 +82,8 @@
     }
     99%{
         transform: translateY(-100%);
-        z-index: 100;
+        z-index: 1000;
+        
     }
     100%{
        z-index: -500;
@@ -91,5 +96,6 @@
     }
     100%{
         transform: translateY(0);
+        z-index: 1000;
     }
 }

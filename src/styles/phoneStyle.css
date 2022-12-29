@@ -265,7 +265,7 @@
         rgba(0, 191, 255, 0.251)  11.2%,
         rgba(49, 0, 210, 0.461) 92.5%
     );
-   
+   z-index: 2000;
     
 }
 
@@ -276,7 +276,7 @@
     animation-name: power;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
-        
+    z-index: 2000;
    
 }
 
