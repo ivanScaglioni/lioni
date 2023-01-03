@@ -31,11 +31,6 @@ export default function Navbar() {
               <a className="a-nav"> HOME</a>
             </Link>
           </div>
-          <div>
-            <Link href="/about">
-              <a className="a-nav"> ABOUT ME</a>
-            </Link>
-          </div>
           <div >
             <Link href="/projects">
               <a className="a-nav"> PROJECTS</a>

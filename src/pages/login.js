@@ -21,7 +21,7 @@ export default function LoginPage(){
         e.preventDefault();
         const res = await fetch('api/auth',{method:'POST', body: JSON.stringify(pass)})
         if(res.status == 200){
-            router.push('https://lioni.vercel.app/admin');
+            router.push('/admin');
         }else{
             const responseerror = document.getElementById('response-error').style.display="flex";
             const timererror = setTimeout(()=>{
@@ -38,7 +38,7 @@ export default function LoginPage(){
             <div className="form-login">
                 <p>ADMIN</p>
                 <input className="input-login pass" type="password" name="pass" placeholder="password" onChange={handlepass} value={pass}/>
-                <input className="input-login log-in push" type="buttom" value="log in" onClick={handlelogin}></input>
+                <button className="input-login log-in push" type="submit"  onClick={handlelogin}>log in</button>
             </div>
             <div id="response-error">
                 <Notfound status="error"  />

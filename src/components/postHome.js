@@ -21,7 +21,6 @@ export default function PostHome({ posts }) {
     handleBar(0);
 
 
-
   }, []);
 
 
@@ -44,9 +43,9 @@ export default function PostHome({ posts }) {
 
 
 
-  const handlePost = (e) => {
+  const handlePost = (side) => {
     const myElement = document.getElementById('a');
-    if (e.target.id == 'btn-left') {
+    if (side == 'btn-left') {
       if (myElement.className.includes('moveleft')) {
         myElement.className = myElement.className.replace('moveleft', 'move-left')
       } else if (myElement.className.includes('move-left')) {
@@ -65,7 +64,7 @@ export default function PostHome({ posts }) {
         setInd(--ind)
         setPost(posts[ind])
       }
-    } else if (e.target.id == 'btn-right') {
+    } else if (side == 'btn-right') {
       if (myElement.className.includes('moveright')) {
         myElement.className = myElement.className.replace('moveright', 'move-right')
       } else if (myElement.className.includes('move-right')) {
@@ -111,11 +110,11 @@ export default function PostHome({ posts }) {
 
       <div className="wheel">
 
-        <button type="" className="btn-wheel btn-back" onClick={handlePost} id="btn-left" ></button>
+        <button type="" className="btn-wheel btn-back" onClick={()=>handlePost("btn-left")} id="btn-left" ></button>
 
         <div className="ball-container"><div className="progresive-bar" id="bar"></div></div>
 
-        <button type="" className="btn-wheel btn-next" onClick={handlePost} id="btn-right" ></button>
+        <button type="" className="btn-wheel btn-next" onClick={()=>handlePost("btn-right")} id="btn-right" ></button>
 
       </div>
 
