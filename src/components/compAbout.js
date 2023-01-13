@@ -200,6 +200,16 @@ export default function CompAbout(props) {
       <div className="contanier-center">
         <div className="phone">
           <div id="screen-1" className="screen">
+            <div>
+              <div className="">
+              <p className="name-title">
+              IVAN SCAGLIONI
+              </p>
+              <p className="name-sub-title">
+                web developer
+              </p>
+              </div>
+            </div>
             <div id="cube">
               <img className="cube-img" src={ils} alt="" />
               <div className="cube-options">
@@ -320,7 +330,7 @@ export default function CompAbout(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="name">IVAN SCAGLIONI</div>
+                  
                   <div className="description-screen-3">
                     Hi, I'm a web developer who wants to work on projects and
                     help his business grow.

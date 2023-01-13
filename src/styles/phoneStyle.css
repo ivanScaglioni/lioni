@@ -1,4 +1,17 @@
 
+.name-title{
+    font-size: 5vh;
+    text-align: center;
+    font-weight: 900;
+    color: #9fc8f0;
+}
+.name-sub-title{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #666a6e;
+}
+
 
 /* /////////////SCREEN 3 ABOUTME////////////////// */
 
@@ -73,15 +86,15 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #272d32;
-    background:
+    background: 
     linear-gradient(
         rgba(255, 255, 255, 0.6)  11.2%,
         rgba(255, 255, 255, 0.6) 92.5%
         ),
     linear-gradient(
         109.6deg,
-        rgb(0, 191, 255)  11.2%,
-        rgb(49, 0, 210) 92.5%
+        #00bfff  11.2%,
+        #3100d2 92.5%
     );
 
     border-radius: 10px;
@@ -240,6 +253,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     /* border: 1px solid green; */
    
@@ -257,13 +271,13 @@
     animation-timing-function: ease-in-out;
     background:
     linear-gradient(
-        rgba(255, 255, 255, 0.114)  11.2%,
-        rgba(255, 255, 255, 0.261) 92.5%
+        rgba(255, 255, 255, 0.6)  11.2%,
+        rgba(255, 255, 255, 0.6) 92.5%
         ),
     linear-gradient(
         109.6deg,
-        rgba(0, 191, 255, 0.251)  11.2%,
-        rgba(49, 0, 210, 0.461) 92.5%
+        #00bfff  11.2%,
+        #3100d2 92.5%
     );
    z-index: 2000;
     
@@ -277,7 +291,7 @@
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     z-index: 2000;
-   
+
 }
 
 
@@ -393,7 +407,7 @@
 }
 
 #noti-screen-2{
-    background-color: #0e0e0f;
+    background-color: hsl(218, 100%, 50%);
 }
 
 
