@@ -146,12 +146,12 @@ export default function PostHome({ posts }) {
         <div className="card-links">
           {myPost.github != undefined &&
             
-            <a className="card-link"href={myPost.github}>{'-'} Github</a>
+            <a className="card-link" target="_blank" href={myPost.github}>{'-'} Github</a>
          
           }
           {myPost.website != undefined &&
             
-            <a className="card-link" href={myPost.website}>{'-'} Website </a>
+            <a className="card-link" target="_blank" href={myPost.website}>{'-'} Website </a>
             
           }
         </div>

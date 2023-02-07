@@ -21,7 +21,10 @@ export default function LoginPage(){
         e.preventDefault();
         const res = await fetch('api/auth',{method:'POST', body: JSON.stringify(pass)})
         if(res.status == 200){
-            router.push('/admin');
+            router.push({
+                pathname:'/admin',
+                auth: `${document.cookie}`
+            });
         }else{
             const responseerror = document.getElementById('response-error').style.display="flex";
             const timererror = setTimeout(()=>{

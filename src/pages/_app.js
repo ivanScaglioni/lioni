@@ -28,6 +28,8 @@ function MyApp({ Component, pageProps }) {
     <div id='app'>
       <Head>
         <title>Ivan Scaglioni</title>
+        <meta name="description" content="Developer FullStack" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href={favisrc}/>
         
       </Head>

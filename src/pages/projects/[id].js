@@ -75,12 +75,12 @@ export default function ProjectDetail({id}){
                     <div className="card-links">
                         {proj.github != undefined &&
                         
-                        <a className="card-link"href={proj.github}>{'-'} Github</a>
+                        <a className="card-link" target="_blank" href={proj.github}>{'-'} Github</a>
                     
                         }
                         {proj.website != undefined &&
                         
-                        <a className="card-link" href={proj.website}>{'-'} Website </a>
+                        <a className="card-link" target="_blank" href={proj.website}>{'-'} Website </a>
                         
                         }
                     </div>                 
