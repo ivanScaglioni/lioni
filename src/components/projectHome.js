@@ -138,16 +138,16 @@ export default function ProjectHome({ projects }) {
         <div className="card-description">{myProj.description}</div>
 
         <div className="card-links">
-          {myProj.github != undefined && (
-            <a className="card-link" target="_blank" href={myProj.github}>
-              {"-"} Github
-            </a>
-          )}
-          {myProj.website != undefined && (
-            <a className="card-link" target="_blank" href={myProj.website}>
-              {"-"} Website
-            </a>
-          )}
+        {myProj.github != undefined && myProj.github !="" && 
+            
+            <a className="card-link" target="_blank" href={myProj.github}>{'-'} Github</a>
+         
+          }
+          {myProj.website != undefined && myProj.website != "" &&
+            
+            <a className="card-link" target="_blank" href={myProj.website}>{'-'} Website </a>
+            
+          }
         </div>
       </div>
     </div>

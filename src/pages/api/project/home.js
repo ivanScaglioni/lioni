@@ -15,7 +15,7 @@ export default async function handler(req,res){
 
         case "GET":
 
-            const proj = await Project.find().sort({ 'updatedAt': -1 }).limit(4);
+            const proj = await Project.find().sort({ 'createdAt': -1 }).limit(4);
             return res.status(200).json(proj);
 
     

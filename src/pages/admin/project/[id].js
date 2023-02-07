@@ -43,11 +43,12 @@ export default function EditProject({id}){
     }
 
     const handleChangeProj = (e)=>{
-    
+        
         setProj({
             ...proj,
             [e.target.name]: e.target.value,
         });
+        console.log(proj)
        
         
     }

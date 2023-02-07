@@ -16,7 +16,7 @@ export default async function handler(req,res){
     switch(method){
         case "GET":
             
-            const posts = await Post.find().sort({'updatedAt': -1});
+            const posts = await Post.find().sort({'createdAt': -1});
             return res.status(200).json(posts);
             
         case "POST":
