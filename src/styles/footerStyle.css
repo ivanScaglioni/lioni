@@ -30,12 +30,15 @@
 }
 
 .form-msg {
-
+    
     display: flex;
     flex-direction: column;
     align-self: center;
-    gap: 2vw;
+    gap: 30px;
+
+    padding-inline: 2vh;
 }
+
 
 .input-msg::placeholder {
     color: rgb(134, 135, 138);
@@ -46,8 +49,10 @@
     max-width: 100%;
     width: 500px;
     padding-bottom: 40px;
+    
 
 }
+
 
 .input-msg {
     /* background-color: #0f20279b; */
@@ -75,6 +80,7 @@
 
 .input-msg::placeholder {
     color: #ffffff7a;
+    
 
 }
 
