@@ -25,7 +25,7 @@ export default function Posts() {
   return (
     <section className="container-v">
       <h1 className="space title">Blog</h1>
-      <div id="response-ok" className="posts-container">
+      <div id="response-ok" className="container-v container-gap">
         {posts.length > 0 ? (
           posts.map((post) => (
             <div className="card card-home" key={post._id}>

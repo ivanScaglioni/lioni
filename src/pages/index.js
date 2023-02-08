@@ -33,13 +33,13 @@ export default  function HomePage(props) {
 
   return (
 
-    <div className="container-v">
+    <div className="container-v container-gap">
 
       <section className="home-section home-about"><CompAbout page="Home"/></section>
     
 
       {projects.length > 0
-        ?<section id="section-porj"><ProjectHome projects={projects} /></section>
+        ?<section id="section-proj"><ProjectHome projects={projects} /></section>
         :<Notfound type="Projects" status="loading" />
       }
       

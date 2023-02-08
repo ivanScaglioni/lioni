@@ -69,6 +69,9 @@ a , a:visited{
     
    
 }
+.container-gap{
+    gap: 100px;
+}
 
 
 section{
@@ -89,7 +92,7 @@ input, textarea, button{
     justify-content: center;
 }
 .title{
-    margin-top: 60px;
+    
     text-align: center;
     color: rgb(241, 255, 254);
     transition-duration: 1s;

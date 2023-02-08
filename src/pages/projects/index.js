@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <section className="container-v">
       <h1 className="space title">Projects</h1>
-      <div id="response-ok" className="projs-container">
+      <div id="response-ok" className="container-v container-gap">
         {projs.length > 0 ? (
           projs.map((proj) => (
             <div className="card" key={proj._id}>
