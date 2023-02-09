@@ -11,6 +11,7 @@ import 'styles/loginStyle.css';
 import 'styles/stylePoPro.css';
 import 'styles/adminStyle.css';
 import 'styles/phoneStyle.css';
+import 'styles/msgAdminStyle.css'
 import favi from "#public/favicon.ico"
 import { useEffect, useState } from "react";
 
